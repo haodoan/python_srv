@@ -23,7 +23,7 @@ serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # get local machine name
 host = socket.gethostname()                           
 print(host)
-port = 1234                                          
+port = 12345                                          
 
 # bind to the port
 serversocket.bind(('127.0.0.1', port))                                  
@@ -46,8 +46,8 @@ while True:
     #print(msg)
     mgs = 'test message'
     DataRecv = clientsocket.recv(1024);
-    print(DataRecv.decode('utf-8'))
-    WriteFile(DataRecv.decode('utf-8'))
+    print(DataRecv)
+  #  WriteFile(DataRecv.decode('utf-8'))
     
     #clientsocket.send(msg.encode('utf-8'))
     clientsocket.close()

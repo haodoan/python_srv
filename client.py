@@ -1,4 +1,5 @@
-#!/usr/bin/python3           # This is client.py file
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import socket
 
@@ -8,13 +9,13 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # get local machine name
 host = socket.gethostname()                           
 
-port = 1234
+port = 12345
 
 # connection to hostname on the port.
-s.connect((host, port))                               
+s.connect(("127.0.0.1", port))                               
 
 # Receive no more than 1024 bytes
-msg = 'Hao Doan'
-msg = s.send(msg.encode('utf-8'))                                     
+msg = 'Hảo Đoàn Đại Học Giao Thông'
+msg = s.send(msg)                                     
 
 s.close()
